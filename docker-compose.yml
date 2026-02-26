@@ -13,3 +13,13 @@ services:
       - "8013:8013"
       - "8015:8015"
 
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - FLAGD_HOST=flagd
+      - FLAGD_PORT=8013
+    depends_on:
+      - flagd
+
