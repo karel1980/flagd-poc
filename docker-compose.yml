@@ -1,0 +1,15 @@
+
+services:
+  flagd:
+    image: ghcr.io/open-feature/flagd:latest
+    volumes:
+      - ./flags:/flags
+    command: [
+      'start',
+      '--uri',
+      'file:./flags/demo.flagd.json',
+    ]
+    ports:
+      - "8013:8013"
+      - "8015:8015"
+
